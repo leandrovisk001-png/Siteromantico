@@ -1,6 +1,6 @@
 # Landing page romântica
 
-Uma página PHP simples, responsiva e feita para uma declaração de amor.
+Projeto feito para Larissa: uma página simples, responsiva e feita para uma declaração de amor.
 
 ## Personalização
 
