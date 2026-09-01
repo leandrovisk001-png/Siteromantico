@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f8eee9">
+    <meta name="description" content="Uma pequena declaração para um grande amor.">
+    <title>Para Minha Gatinha, com amor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Italiana&family=Parisienne&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <main>
+        <section class="hero" aria-labelledby="titulo-principal">
+            <div class="hero__content">
+                <p class="eyebrow reveal">Uma pequena surpresa para</p>
+                <h1 id="titulo-principal" class="reveal reveal--delay-1">Minha Gatinha<span class="ponto">.</span></h1>
+                <p class="hero__phrase reveal reveal--delay-2">Você é o meu lugar favorito no mundo.</p>
+
+                <button class="love-button reveal reveal--delay-3" type="button" data-open-letter aria-controls="carta" aria-expanded="false">
+                    <span>Abra meu coração</span>
+                    <span class="love-button__heart" aria-hidden="true">♥</span>
+                </button>
+            </div>
+
+            <div class="scroll-hint reveal reveal--delay-3" aria-hidden="true">
+                <span></span>
+                role devagar
+            </div>
+        </section>
+
+        <section id="carta" class="letter-section" aria-labelledby="titulo-carta">
+            <div class="letter-wrap">
+                <div class="letter-intro observe">
+                    <span class="tiny-heart" aria-hidden="true">♥</span>
+                    <p>Se eu pudesse resumir tudo...</p>
+                </div>
+
+                <article class="letter observe">
+                    <span class="letter__number" aria-hidden="true">01</span>
+                    <p class="letter__to">Para Minha Gatinha,</p>
+                    <h2 id="titulo-carta">Eu escolheria você.<br>Em todos os dias.</h2>
+                    <p class="letter__text">Talvez eu nem sempre encontre as palavras perfeitas, mas quero que você saiba de uma coisa: ter você na minha vida faz tudo ficar mais bonito. Seu sorriso acalma meus dias, seu abraço parece casa e amar você é a minha parte favorita de existir.</p>
+
+                    <div class="counter" data-start-date="2023-01-16" aria-label="Tempo juntos">
+                        <strong data-days-together>1.324</strong>
+                        <span>dias escolhendo você</span>
+                    </div>
+
+                    <p class="signature">Com todo o meu amor<span>♥</span></p>
+                </article>
+            </div>
+        </section>
+
+        <section class="reasons" aria-label="O que você significa para mim">
+            <div class="reasons__heading observe">
+                <p class="eyebrow">Em você eu encontrei</p>
+                <h2>Tudo o que eu<br>nem sabia onde procurar.</h2>
+            </div>
+
+            <div class="reasons__grid">
+                <article class="reason observe">
+                    <span>01</span>
+                    <h3>Meu sorriso</h3>
+                    <p>Porque até os dias comuns ficam especiais quando são com você.</p>
+                </article>
+                <article class="reason observe">
+                    <span>02</span>
+                    <h3>Meu abrigo</h3>
+                    <p>Porque no seu abraço o mundo desacelera e eu encontro paz.</p>
+                </article>
+                <article class="reason observe">
+                    <span>03</span>
+                    <h3>Meu futuro</h3>
+                    <p>Porque todos os meus planos mais bonitos têm você por perto.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="finale" aria-label="Declaração final">
+            <div class="finale__content observe">
+                <p>Hoje, amanhã e em cada página que ainda vamos escrever:</p>
+                <h2>Eu te amo minha Lari.</h2>
+                <button class="heart-pulse" type="button" data-heart aria-label="Enviar um coração">
+                    <span aria-hidden="true">♥</span>
+                </button>
+                <small>Toque no coração</small>
+            </div>
+        </section>
+    </main>
+
+    <div class="heart-toast" role="status" aria-live="polite">
+        <span class="heart-toast__icon" aria-hidden="true">♥</span>
+        <span>Esse coração é todo seu</span>
+    </div>
+    <script src="assets/script.js"></script>
+</body>
+</html>
