@@ -30,6 +30,27 @@
             <h1 id="game-title">Entre <em>Nós</em></h1>
             <p class="game-lead">Um jogo de provocações, carinho e desejo. Escolham o clima, alternem os turnos e deixem a noite acontecer.</p>
 
+            <div class="player-setup" aria-labelledby="players-title">
+                <div class="player-setup__heading">
+                    <span aria-hidden="true">♥</span>
+                    <div>
+                        <h2 id="players-title">Como vocês se chamam?</h2>
+                        <p>Vale nome, apelido ou aquele jeitinho especial de chamar um ao outro.</p>
+                    </div>
+                </div>
+                <div class="player-fields">
+                    <label>
+                        <span>Primeiro amor</span>
+                        <input type="text" data-player-one maxlength="18" placeholder="Ex.: Lari" autocomplete="off">
+                    </label>
+                    <span class="player-fields__heart" aria-hidden="true">♥</span>
+                    <label>
+                        <span>Segundo amor</span>
+                        <input type="text" data-player-two maxlength="18" placeholder="Ex.: Meu bem" autocomplete="off">
+                    </label>
+                </div>
+            </div>
+
             <div class="level-picker" aria-label="Escolha a intensidade">
                 <button class="level-option" type="button" data-level="suave">
                     <span class="level-option__number">01</span>
@@ -77,7 +98,18 @@
                 Vez de <strong data-player>Amor 1</strong>
             </div>
 
-            <article class="challenge-card" data-card tabindex="-1">
+            <div class="privacy-gate" data-privacy-gate>
+                <span class="privacy-gate__icon" aria-hidden="true">✦</span>
+                <p>Carta confidencial</p>
+                <h2>Passe o celular para<br><strong data-gate-player>Amor 1</strong></h2>
+                <small>O desafio só aparece depois que a pessoa da vez confirmar.</small>
+                <button type="button" data-reveal>
+                    <span>Sou <span data-reveal-player>Amor 1</span> — revelar</span>
+                    <span aria-hidden="true">→</span>
+                </button>
+            </div>
+
+            <article class="challenge-card" data-card tabindex="-1" hidden>
                 <div class="challenge-card__top">
                     <span data-card-type>Provocação</span>
                     <span data-card-number>01</span>
@@ -89,7 +121,7 @@
                 <p class="challenge-card__footer">Sem pressa. Aproveitem o momento.</p>
             </article>
 
-            <div class="game-actions">
+            <div class="game-actions" data-actions hidden>
                 <button class="pass-button" type="button" data-pass>Passar esta</button>
                 <button class="done-button" type="button" data-next>
                     <span>Feito</span>
