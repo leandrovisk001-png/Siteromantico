@@ -463,9 +463,19 @@ em {
     .game-nav__links { gap: 1rem; }
     .game-nav__links a:first-child { display: none; }
     .game-nav__links a { font-size: .58rem; letter-spacing: .07em; }
-    .game-shell { min-height: calc(100svh - 70px); padding-top: 1rem; }
-    .game-intro h1 { font-size: clamp(3.7rem, 17vw, 4.6rem); }
-    .player-setup { padding: 1rem; }
+    .game-shell {
+        min-height: calc(100svh - 70px);
+        align-items: start;
+        padding-top: 1.25rem;
+    }
+    .game-intro h1 { font-size: clamp(3.5rem, 16vw, 4.35rem); }
+    .game-lead { margin: 1.25rem auto 1.4rem; }
+    .player-setup {
+        margin-bottom: 1.4rem;
+        padding: 1rem;
+        border-color: rgba(235,165,172,.35);
+        background: rgba(255,255,255,.045);
+    }
     .player-setup__heading { align-items: flex-start; }
     .player-setup p { line-height: 1.45; }
     .player-fields { grid-template-columns: 1fr; gap: .7rem; }
@@ -477,6 +487,7 @@ em {
     .level-option strong { margin: 0 0 .15rem; }
     .agreement { max-width: 390px; }
     .challenge-card { min-height: 360px; }
+    .privacy-gate { min-height: 360px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
