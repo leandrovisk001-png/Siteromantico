@@ -31,6 +31,66 @@ button {
     font: inherit;
 }
 
+.site-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem clamp(1.25rem, 4vw, 4rem);
+}
+
+.site-nav__brand {
+    color: var(--wine);
+    font-family: 'Italiana', serif;
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.site-nav__brand span {
+    margin-left: 0.12rem;
+    color: var(--rose);
+    font-size: 0.65rem;
+}
+
+.site-nav__links {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+.site-nav__links a {
+    position: relative;
+    padding: 0.45rem 0;
+    color: var(--wine);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.11em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.site-nav__links a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: var(--rose);
+    transform: scaleX(0);
+    transition: transform 220ms ease;
+}
+
+.site-nav__links a:hover::after,
+.site-nav__links a:focus-visible::after,
+.site-nav__links a.is-active::after {
+    transform: scaleX(1);
+}
+
 .grain {
     position: fixed;
     inset: 0;
@@ -481,6 +541,19 @@ button {
 }
 
 @media (max-width: 760px) {
+    .site-nav {
+        padding: 1.15rem 1.25rem;
+    }
+
+    .site-nav__links {
+        gap: 1rem;
+    }
+
+    .site-nav__links a {
+        font-size: 0.58rem;
+        letter-spacing: 0.07em;
+    }
+
     .hero {
         background-position: 55% center;
     }

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d101a">
+    <meta name="description" content="Entre Nós: um jogo a dois para criar conexão e esquentar o clima.">
+    <title>Entre Nós — Um jogo a dois</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Italiana&family=Parisienne&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/jogo.css">
+</head>
+<body>
+    <div class="game-grain" aria-hidden="true"></div>
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+
+    <nav class="game-nav" aria-label="Navegação principal">
+        <a class="game-nav__brand" href="./" aria-label="Página inicial">L<span>♥</span></a>
+        <div class="game-nav__links">
+            <a href="./">Nossa história</a>
+            <a class="is-active" href="jogo.html" aria-current="page">Entre Nós</a>
+        </div>
+    </nav>
+
+    <main class="game-shell">
+        <section class="game-intro" data-intro aria-labelledby="game-title">
+            <p class="game-eyebrow">Só vocês dois · sem pressa</p>
+            <h1 id="game-title">Entre <em>Nós</em></h1>
+            <p class="game-lead">Um jogo de provocações, carinho e desejo. Escolham o clima, alternem os turnos e deixem a noite acontecer.</p>
+
+            <div class="level-picker" aria-label="Escolha a intensidade">
+                <button class="level-option" type="button" data-level="suave">
+                    <span class="level-option__number">01</span>
+                    <strong>Suave</strong>
+                    <small>Conexão & carinho</small>
+                </button>
+                <button class="level-option is-selected" type="button" data-level="quente">
+                    <span class="level-option__number">02</span>
+                    <strong>Quente</strong>
+                    <small>Desejo & provocação</small>
+                </button>
+                <button class="level-option" type="button" data-level="intenso">
+                    <span class="level-option__number">03</span>
+                    <strong>Intenso</strong>
+                    <small>Ousadia & confiança</small>
+                </button>
+            </div>
+
+            <div class="agreement">
+                <span aria-hidden="true">♥</span>
+                <p>Regra de ouro: só vale se os dois quiserem. Qualquer pessoa pode passar uma carta, sem precisar explicar.</p>
+            </div>
+
+            <button class="start-button" type="button" data-start>
+                <span>Começar o jogo</span>
+                <span class="start-button__arrow" aria-hidden="true">↗</span>
+            </button>
+            <p class="adult-note">Experiência destinada a casais adultos.</p>
+        </section>
+
+        <section class="game-board" data-board hidden aria-live="polite" aria-labelledby="round-label">
+            <header class="board-header">
+                <button class="back-button" type="button" data-back aria-label="Voltar ao início">←</button>
+                <div>
+                    <p>Entre Nós</p>
+                    <span data-level-label>Nível quente</span>
+                </div>
+                <p class="round-count"><span data-round>1</span> / 12</p>
+            </header>
+
+            <div class="progress" aria-hidden="true"><span data-progress></span></div>
+
+            <div class="turn" id="round-label">
+                <span class="turn__dot"></span>
+                Vez de <strong data-player>Amor 1</strong>
+            </div>
+
+            <article class="challenge-card" data-card tabindex="-1">
+                <div class="challenge-card__top">
+                    <span data-card-type>Provocação</span>
+                    <span data-card-number>01</span>
+                </div>
+                <div class="challenge-card__content">
+                    <span class="challenge-card__icon" aria-hidden="true" data-card-icon>♥</span>
+                    <p data-challenge>Chegue pertinho e diga, no ouvido, uma coisa que você adoraria que acontecesse hoje.</p>
+                </div>
+                <p class="challenge-card__footer">Sem pressa. Aproveitem o momento.</p>
+            </article>
+
+            <div class="game-actions">
+                <button class="pass-button" type="button" data-pass>Passar esta</button>
+                <button class="done-button" type="button" data-next>
+                    <span>Feito</span>
+                    <span aria-hidden="true">→</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="game-finish" data-finish hidden aria-labelledby="finish-title">
+            <span class="finish-heart" aria-hidden="true">♥</span>
+            <p class="game-eyebrow">O jogo termina. A noite não precisa.</p>
+            <h2 id="finish-title">Agora é só<br><em>vocês dois.</em></h2>
+            <p>Doze momentos, um pouco mais de desejo e uma ótima desculpa para ficarem ainda mais perto.</p>
+            <button class="start-button" type="button" data-restart>
+                <span>Jogar de novo</span>
+                <span class="start-button__arrow" aria-hidden="true">↻</span>
+            </button>
+            <a href="./" class="home-link">Voltar para nossa história</a>
+        </section>
+    </main>
+
+    <script src="assets/jogo.js"></script>
+</body>
+</html>
