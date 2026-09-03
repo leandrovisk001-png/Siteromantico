@@ -69,7 +69,14 @@ let deck = [];
 let currentIndex = 0;
 
 function shuffled(items) {
-    return [...items].sort(() => Math.random() - 0.5);
+    const result = [...items];
+
+    for (let index = result.length - 1; index > 0; index -= 1) {
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        [result[index], result[randomIndex]] = [result[randomIndex], result[index]];
+    }
+
+    return result;
 }
 
 function showScreen(screen) {
@@ -104,7 +111,7 @@ function startGame() {
     renderCard();
 }
 
-function advanceCard(isPass = false) {
+function advanceCard() {
     if (round >= 12) {
         showScreen(finish);
         return;
@@ -112,10 +119,21 @@ function advanceCard(isPass = false) {
 
     round += 1;
     currentIndex += 1;
+    renderCard(true);
+}
 
-    if (isPass && currentIndex < deck.length - 1) {
-        const replacementIndex = currentIndex + Math.floor(Math.random() * (deck.length - currentIndex));
-        [deck[currentIndex], deck[replacementIndex]] = [deck[replacementIndex], deck[currentIndex]];
+function passCard() {
+    const previousCard = deck[currentIndex];
+    currentIndex += 1;
+
+    if (currentIndex >= deck.length) {
+        deck = shuffled(challenges[selectedLevel]);
+
+        if (deck[0] === previousCard && deck.length > 1) {
+            [deck[0], deck[1]] = [deck[1], deck[0]];
+        }
+
+        currentIndex = 0;
     }
 
     renderCard(true);
@@ -129,7 +147,7 @@ levelButtons.forEach((button) => {
 });
 
 document.querySelector('[data-start]').addEventListener('click', startGame);
-document.querySelector('[data-next]').addEventListener('click', () => advanceCard(false));
-document.querySelector('[data-pass]').addEventListener('click', () => advanceCard(true));
+document.querySelector('[data-next]').addEventListener('click', advanceCard);
+document.querySelector('[data-pass]').addEventListener('click', passCard);
 document.querySelector('[data-restart]').addEventListener('click', startGame);
 document.querySelector('[data-back]').addEventListener('click', () => showScreen(intro));
